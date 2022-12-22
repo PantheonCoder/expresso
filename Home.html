@@ -1,0 +1,74 @@
+<html lang="latin">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="Home.css">
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    
+    <div class="chead">
+      <span id="dis">
+        Expresso <b>1.0.3</b></span>
+       
+          <i class="fa-solid fa-rocket"></i>
+      
+    </div>
+    <span id="demo">Demo version</span>
+      <span id="text">
+       JOIN the 
+       <b id="rand"></b>
+       </span>
+      <p id="dialog">welcome to finder a wonderful crib to get the best entertainment</p>
+    <div class="animation">
+      <span id="circle">
+        
+        
+      </span>
+      <img src="img/img (26).png" id="mascot">
+      
+      
+      
+    </div>
+    
+    
+    <a href="index.html"><span id="btn"><span>Explore</span> <i class="fa-solid fa-arrow-right"></i></span></a>
+  </div>
+  
+  <script>
+    let word= document.querySelector("#rand")
+    ;
+    
+    let arr=["Family","Crib","Adventure","Homies"];
+    
+    let count=0;
+    let sort=()=>{
+      
+    
+      word.innerHTML = arr[count]
+      
+  if(count < arr.length -1){
+    
+    count++
+      }
+      else{count =0;
+      
+        
+      }
+      
+     
+      
+    }
+    setInterval(sort,2000)
+    
+  </script>
+</body>
+
+
+</html>

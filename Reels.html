@@ -1,0 +1,258 @@
+<html lang="latin">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="Reels.css">
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="reel_top">
+      <span id="lg">Vidmax</span>
+      <span id="search">                    <i class="fa-solid fa-search"
+        ></i></span>
+      
+      
+    </div>
+        <a href="index.html" id="backarrow">                    <i class="fa-solid fa-arrow-left"
+        ></i></a>
+
+
+  
+  
+  </div>
+  
+ 
+  
+  <script>
+  let db=[
+    {
+      link:"vid (6).mp4",
+      likes:"500k",
+      desc:"behance is wrongly cliched"
+    },
+    {
+            link:"vid (4).mp4",
+      likes:"15M",
+      desc:"a silhouetted mutherfucker"
+    },
+    {
+            link:"vid (2).mp4",
+      likes:"7k",
+      desc:"a boogie with that hoodie"
+      
+    }
+    
+    
+    
+    
+    ]
+  let wrapper= document.querySelector(".wrapper");
+  
+db.forEach((data,i)=>{
+  let div = document.createElement("div");
+  div.classList.add("reel_card");
+  
+  div.innerHTML=`
+ <div class="video_info">
+   <span id="close"   >       <i class="fa-solid fa-close"
+        ></i></span>
+
+
+  <div class="info">
+  
+   <span id="vid_info_head"
+   >Video information</span>
+   <span id="" >Length:<b>2min 30s</b></span>
+   <span id="" >Uploader:<b>Admin</b></span>
+   <span id="" >Upload time:<b>6hrs ago</b></span>
+   </div>
+   
+             <span id="upload">
+             Upload    a reel
+                <span id="btn" >
+                <i class="fa-solid fa-plus"
+        >
+               
+               
+             </span>
+               
+             </i>
+     
+   </span>
+   
+   <span id="copy" >All rights reserved &copy 2022</span>
+   
+ </div>
+  
+    <video src="/storage/emulated/0/themuskbible/Google clone/video/${data.link}" ></video >
+    
+    <span id="play">
+                        <i class="fa-solid fa-play"
+        ></i></span>
+    
+    
+    
+    
+    <div class="right_function">
+            <span id="">
+            ${data.likes}
+                    <i class="fa-solid fa-heart"
+        ></i>
+            </span>      <span id="">
+              22                    <i class="fa-solid fa-comment
+             
+            "
+        ></i>
+            
+            
+            </span>
+            
+            
+            <span id="">300
+       
+                    <i class="fa-solid fa-share"
+        ></i>
+            </span>
+        <span id="int">                    <i class="fa-solid fa-plus"
+        ></i></span>
+      
+    </div>
+    
+    
+    
+    
+    <div class="bottom_function">
+
+      <div class="sec">
+        <marquee>${data.desc}</marquee>
+        <span class="spinner "
+    ></span>  </div>
+      
+    </div>
+ 
+  `
+  wrapper.appendChild(div)
+  
+          let vid_info=document.querySelectorAll(".video_info");
+ 
+ 
+  
+  
+})
+     let vid=document.querySelectorAll("video");
+     let play_circle=document.querySelectorAll("#play");
+     
+          let vid_info=document.querySelectorAll(".video_info");
+    let info_plus=document.querySelectorAll("#int");
+          let closebtn=document.querySelectorAll("#close")
+
+     
+     
+     let spinner=document.querySelectorAll(".spinner");
+   play_circle.forEach((circle,i)=>{
+    console.log(vid[i])   
+let toggle_play =()=>{
+   
+if(vid[i].paused ==true){
+
+    vid[i].play()
+
+   circle.innerHTML=`<i class="fa-solid fa-pause"></i>`
+    
+    
+    
+  }
+  else{
+
+    vid[i].pause();
+
+    circle.innerHTML=`<i class="fa-solid fa-play"></i>`
+  }
+
+    setTimeout(clickToPlay,300)
+  }
+let clickToPlay=()=>{
+   if(vid[i].paused== true){
+   circle.classList.add("active"
+   );
+
+   }
+   else if (vid[i].paused== false){
+     circle.classList.remove("active");
+     
+
+   }
+   
+  
+}
+       
+       
+       
+    vid[i].addEventListener("click",()=>{
+         toggle_play();
+     if(vid[i].paused ==false){
+       spinner[i].classList.add("active"
+   )
+   
+     }
+     else if (vid[i].paused== true){
+       spinner[i].classList.remove("active"
+   )
+     }
+     
+     }  )
+     
+     
+    closebtn[i].addEventListener("click",()=>{
+      
+       
+       vid_info[i].classList.remove("active"
+   )
+     }
+     
+     )
+    info_plus[i].addEventListener("click",()=>{
+      
+       
+       vid_info[i].classList.add("active"
+   )
+     }
+     
+     )
+   })
+     
+     
+     let observe= new IntersectionObserver((entries)=>{
+       entries.forEach((entry)=>{
+         console.log(entry)
+         if(entry.isIntersecting==true){
+           
+           
+         }
+         else{
+           
+           
+         }
+       })
+     }
+     
+     
+     )
+     
+     
+     
+     
+     
+     
+  </script>
+  
+  
+</body>
+
+</html>
+
